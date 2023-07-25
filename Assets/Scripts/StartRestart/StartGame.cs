@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject[] enemies;
     [SerializeField] Transform playerPosition;
     [SerializeField] List<Transform> enemySpawnPos;
-    [SerializeField] TextMeshProUGUI winLoseText;
+    [SerializeField] TextMeshProUGUI winLoseText,coinsText;
     int deadAmount;
     public void Begin()
     {
@@ -39,6 +39,7 @@ public class StartGame : MonoBehaviour
     {
         winLoseText.text = "You win";
         deadAmount++;
+        coinsText.text = $"Coins: {deadAmount}";
         //Debug.Log("Dead Amount");
        // door.SetActive(true);
         if (deadAmount >= enemySpawnPos.Count)
